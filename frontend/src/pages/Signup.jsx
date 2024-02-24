@@ -25,11 +25,12 @@ const Signup = () => {
   };
   const handleFileInputChange = async (event) => {
     const file = event.target.files[0];
+    // Upload the image to Cloudinary and get 
     const data = await uploadImageToCloudinary(file);
     setPreviewURL(data.url);
     setSelectedFile(data.url);
     setFormData({...formData,photo:data.url});
-  
+
   };
 
   const submitHandler = async event => {
@@ -134,10 +135,10 @@ const Signup = () => {
           </label>
           </div>
 
-          <div className='mb-4 flex items-center gap-3'>
-            {selectedFile && <figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center'>
+          <div className='mb-5 flex items-center gap-3'>
+            {selectedFile && (<figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center'>
               <img src={previewURL} className="w-full rounded-full" alt=""/>
-            </figure> }
+            </figure>) }
             <div className='relative w-[130px] h-[50px]'>
               <input
                 type="file"
