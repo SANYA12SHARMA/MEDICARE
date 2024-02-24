@@ -7,32 +7,6 @@ import SidePanel from './SidePanel';
 const DoctorDetails = () => {
   const [tab,setTab] = useState('abo');
   return (
-    // <section>
-    //   <div className='max-w-[1170px] px-5 mx-auto'>
-    //   <div className='grid md:grid-cols-3 gap-[50px]'>
-    //   <div className='md:col-span-2'>
-   
-    //   </div>
-    //   <div className='mt-[50px] border-b border-solid border-[#0066ff34]'>
-    //     <button 
-    //     
-    //       About
-    //     </button>
-    //     <button 
-    //     onClick={()=>setTab('feedback')}
-    //     className={`${tab === 'feedback' && "border-b border-solid border-primaryColor"} py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
-    //       Feedback
-    //     </button>
-    //   </div>
-
-
-      
-      
-    //   <div></div>
-    //   </div>
-    //   </div>
-    // </section>
-
     <section>
       <div className='max-w-[1170px] px-5 mx-auto'>
       <div className='grid md:grid-cols-3 gap-[50px]'>
