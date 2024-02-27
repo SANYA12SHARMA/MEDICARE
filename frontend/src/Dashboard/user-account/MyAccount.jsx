@@ -5,7 +5,7 @@ import MyBookings from './MyBookings';
 import Profile from './Profile';
 import useGetProfile from '../../hooks/useFetchData';
 import Loading from '../../components/Loader/Loading';
-import getErr from '../../components/Error/getErr';
+// import getErr from '../../components/Error/getErr';
 import { BASE_URL } from '../../config';
 const MyAccount = () => {
 

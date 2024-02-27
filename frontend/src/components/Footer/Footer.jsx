@@ -35,8 +35,8 @@ const quickLinks01 = [
     display:"Services",
   },
   {
-    path: "/",
-    display:"Blog",
+    path: "/contact",
+    display:"Contact Us",
   }
 ];
 const quickLinks02 = [
@@ -47,26 +47,9 @@ const quickLinks02 = [
   {
     path: "/",
     display:"Request an Appointment",
-  },
-  {
-    path: "/",
-    display:"Find a Location",
-  },
-  {
-    path: "/",
-    display:"Get an Opinion",
   }
 ];
-const quickLinks03 = [
-  {
-    path: "/",
-    display:"Donate",
-  },
-  {
-    path: "/contact",
-    display:"Contact Us",
-  }
-];
+
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
@@ -96,16 +79,6 @@ const Footer = () => {
           <h2 className='text-[20px] leading-[30px] font-[700] mb-6 text-headingColor'>Support</h2>
           <ul>
             {quickLinks02.map((item,index) => (
-              <li key={index} className='mb-4'>
-                <Link to = {item.path} className='text-[16px] leading-7 font-[400] text-headingColor'> {item.display}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className='text-[20px] leading-[30px] font-[700] mb-6 text-headingColor'>QuickLinks</h2>
-          <ul>
-            {quickLinks03.map((item,index) => (
               <li key={index} className='mb-4'>
                 <Link to = {item.path} className='text-[16px] leading-7 font-[400] text-headingColor'> {item.display}</Link>
               </li>
