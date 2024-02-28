@@ -3,7 +3,7 @@ import {token} from "../config";
 
 const useFetchData = (url) => {
     const [data,setData] = useState([]);
-    const [loading,setLoading] = useState(false );
+    const [loading,setLoading] = useState(false);
     const [error,setError] = useState(null);
     useEffect(() => {
         const fetchData = async()=>{
@@ -20,10 +20,11 @@ const useFetchData = (url) => {
             setLoading(false);
            }
            catch(err){
+            console.error('Fetch Error:', err); // Log the error for debugging
             setLoading(false);
             setError(err.message);
            }
-        }
+        };
         fetchData();
     },[url])
     return {
