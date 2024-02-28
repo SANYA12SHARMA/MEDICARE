@@ -19,7 +19,9 @@ const Signup = () => {
     gender:"",
     role:"patient"
   });
+
   const navigate = useNavigate();
+
   const handleInputChange = e => {
     setFormData({...formData,[e.target.name]:e.target.value});
   };
@@ -30,7 +32,6 @@ const Signup = () => {
     setPreviewURL(data.url);
     setSelectedFile(data.url);
     setFormData({...formData,photo:data.url});
-
   };
 
   const submitHandler = async event => {
@@ -48,11 +49,11 @@ const Signup = () => {
     const { message }= await res.json()
 
     if(!res.ok){
-        throw new Error(message)
+        throw new Error(message);
     }
 
-    setLoading(false)
-    toast.success(message)
+    setLoading(false);
+    toast.success(message);
     navigate('/login');
     }
   catch(err){
@@ -157,7 +158,8 @@ const Signup = () => {
             </div>
           </div>
           <div className='mt-7'>
-          <button disabled={loading && true} type="submit" className='w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3'>{loading ? (<HashLoader size={35} color="#ffffff"/>) :'Sign up'}</button>
+          <button 
+          disabled={loading && true} type="submit" className='w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3'>{loading ? (<HashLoader size={35} color="#ffffff"/>) :'Sign up'}</button>
         </div>
         <p className='mt-5 text-textColor text-center'>Already have an account?
         <Link to="/login" className='text-primaryColor font-medium ml-1'>Login</Link>

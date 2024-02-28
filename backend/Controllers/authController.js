@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs';
 
 const generateToken = user=>{
     return jwt.sign({id: user._id, role: user.role}, process.env.JWT_SECRET_KEY,{
-        expiresIn:"15d",
+        expiresIn:"30d",
     })
 }
 
@@ -16,10 +16,10 @@ export const register = async(req, res)=>{
 
         let user = null;
         if(role==='patient'){
-            user=await User.findOne({email})
+            user=await User.findOne({email});
         }
         else if(role==='doctor'){
-            user=await Doctor.findOne({email})
+            user=await Doctor.findOne({email});
         }
 
         //check if user exist

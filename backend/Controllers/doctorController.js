@@ -23,7 +23,7 @@ export const deleteDoctor = async(req, res)=>{
 }
 
 export const getSingleDoctor = async(req, res)=>{
-    const id = req.params.id 
+    const id = req.params.id
     try{
         const doctor = await Doctor.findById(id).populate("reviews").select("-password");;
 
@@ -36,7 +36,7 @@ export const getSingleDoctor = async(req, res)=>{
 export const getAllDoctor = async(req, res)=>{
      
     try{
-        const {query} = req.query
+        const {query} = req.query;
         let doctors;
 
         if(query){
@@ -67,7 +67,7 @@ export const getDoctorProfile = async(req, res)=>{
         const {password, ...rest} = doctor._doc ;
         const appointments = await Booking.find({doctor: doctorId})
 
-        res.status(200).json({success:true, message:'Profile info is getting', data:{...rest}})
+        res.status(200).json({success:true, message:'Profile info is getting', data:{...rest,appointments}})
 
     }catch(err){
         res.status(500).json({success: false, message: "Something went wrong, cannot get"});
