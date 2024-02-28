@@ -27,6 +27,7 @@ const Profile = ({user}) => {
       gender:user.gender,
       bloodType:user.bloodType
     });
+    setSelectedFile(user.photo);
   },[user]);
 
   const handleInputChange = e => {
@@ -34,9 +35,15 @@ const Profile = ({user}) => {
   };
   const handleFileInputChange = async (event) => {
     const file = event.target.files[0];
-    const data = await uploadImageToCloudinary(file);
-    setSelectedFile(data.url);
-    setFormData({...formData,photo:data.url});
+    if (file) {
+      const data = await uploadImageToCloudinary(file);
+      setSelectedFile(data.url);
+      setFormData({ ...formData, photo: data.url });
+    } else {
+      // If the user cleared the file input, reset selectedFile and photo in formData
+      setSelectedFile(null);
+      setFormData({ ...formData, photo: null });
+    }
   };
 
   const submitHandler = async event => {
@@ -130,9 +137,9 @@ const Profile = ({user}) => {
           </div>
 
           <div className='mb-5 flex items-center gap-3'>
-            {formData.photo && (<figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center'>
-              <img src={formData.photo} className="w-full rounded-full" alt=""/>
-            </figure>) }
+            {selectedFile ? (<figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center'>
+              <img src={selectedFile} className="w-full rounded-full" alt=""/>
+            </figure>) : null}
             <div className='relative w-[130px] h-[50px]'>
               <input
                 type="file"
@@ -145,7 +152,7 @@ const Profile = ({user}) => {
               <label htmlFor='customFile'
               className='absolute top-0 left-0 w-full h-full flex items-center px-[0.75rem] py-[0.375rem] text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold rounded-lg truncate cursor-pointer'
               >
-              {selectedFile ? selectedFile.name:"Upload Photo" }
+              {selectedFile ? "Photo":"Upload Photo" }
 
               </label>
             </div>

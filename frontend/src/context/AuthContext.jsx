@@ -21,12 +21,13 @@ const authReducer = (state, action)=>{
             };
 
         case "LOGIN_SUCCESS":
-            return{
-                user: action.payload.user,
-                
-                role: action.payload.role,
-                token: action.payload.token,
-            };
+           // Exclude the 'photo' property from the user object
+      const { photo, ...userData } = action.payload.user;
+      return {
+        user: userData,
+        role: action.payload.role,
+        token: action.payload.token,
+      };
 
         case "LOGOUT":
             return{
