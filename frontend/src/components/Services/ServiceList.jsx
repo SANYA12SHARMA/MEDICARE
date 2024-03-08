@@ -1,11 +1,10 @@
 import {services} from './../../assets/data/services';
 import ServiceCard from './ServiceCard';
-import React from 'react';
 const ServiceList = () => {
-    return (<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]'>
-        {services.map((item,index) => (<ServiceCard item={item} index={index} key={index}></ServiceCard>))}
+    return (
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px]'>
+        {services.map((item) => (<ServiceCard item={item}></ServiceCard>))}
     </div>
     )
 };
-
 export default ServiceList;
