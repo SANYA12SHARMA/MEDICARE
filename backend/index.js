@@ -41,5 +41,5 @@ app.use('/api/doctors', doctorRoute);
 app.use('/api/reviews', reviewRoute);
 app.listen(port, ()=>{
     connectDB();
-    console.log("Server is running on port"+port);
+    console.log("Server is running on port "+port);
 });

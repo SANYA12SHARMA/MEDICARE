@@ -11,7 +11,6 @@ import ServiceList from '../components/Services/ServiceList';
 import DoctorList from '../components/Doctors/DoctorList';
 import featureImg from '../assets/images/feature-img.png';
 import FaqList from '../components/Faq/FaqList';
-
 const Home = () => {
   return (
     <>
@@ -73,93 +72,57 @@ const Home = () => {
                 <ServiceList />
             </div>
         </section>
-           {/* =======Feature Section======== */}
-           <section>
+        <section>
             <div className='container'>
-              <div className='flex items-center justify-between flex-col lg:flex-row'>
-                 {/* =======feature content======== */}
-                 <div className='xl:w-[670px]'>
-                  <h2 className='heading'>
-                    Book Appointment <br /> anytime.
-                  </h2>
-                  <ul className='pl-4'>
-                    <li className='text_para'>
-                      1.Schedule the appointment directly.
-                    </li>
-                    <li className='text_para'>
-                    2.Search for your physician here and contact their office.
-                    </li>
-                    <li className='text_para'>
-                    3.View our physicians who are accepting new patients, use the online scheduling tool to select an appointment time.
-                    </li>
-                  </ul>
-                 </div>
-                 {/* ======= feature img ======== */}
-                 <div className='relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0'>
-                  <img src={featureImg} className='w-3/4' alt='' />
-                  <div className='w-[150px] lg:w-[240px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]'>
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center gap-[6px] lg:gap-3'>
-                    <p className='text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]'>Tue, 24</p>
-                    <p className='text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor font-[400]'>
-                      10:00AM
-                    </p>
+                <div className='flex items-center justify-between flex-col lg:flex-row'>
+                    <div className='xl:w-[670px]'>
+                        <h2 className='heading'>Book Appointment <br /> anytime.</h2>
+                        <ul>
+                            <li className='text_para'>1.Schedule the appointment directly.</li>
+                            <li className='text_para'>2.Search for your physician here and contact their office.</li>
+                            <li className='text_para'>3.View our physicians who are accepting new patients, use the online scheduling tool to select an appointment time.</li>
+                        </ul>
                     </div>
-    
+                    <div className='relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0'>
+                        <img src={featureImg} className='w-3/4' alt='' />
+                        <div className='w-[150px] lg:w-[240px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]'>
+                            <div className='flex items-center justify-between'>
+                                <div className='flex items-center gap-[6px] lg:gap-3'>
+                                    <p className='text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]'>Tue, 24</p>
+                                    <p className='text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor font-[400]'>10:00AM</p>
+                                </div>                 
+                            </div>
+                            <div className='w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full'>Consultation</div>
+                            <div className='flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]'>
+                                <img src={avatarIcon} alt=''/>
+                                <h4 className='text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor'>WayneCollins</h4>
+                            </div>
+                        </div>
                     </div>
-
-                    <div className='w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full'>
-                      Consultation
-                    </div>
-                    <div className='flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]'>
-                     <img src={avatarIcon} alt=''/>
-                     <h4 className='text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor'>
-                      WayneCollins
-                     </h4>
-                    </div>
-                  </div>
-                 </div>
-              </div>
+                </div>
             </div>
-           </section>
-
-
-           {/* ====== feature section end ========= */}
-           {/* ====== our great doctors========= */}
-           <section>
-           <div className='container'>
-            <div className='xl:w-[470px] mx-auto'>
-              <h2 className='heading text-center'> Our great doctors</h2>
-              <p className='text_para text-center'>
-                World class care for everyone, our health system offers unmatched,expert health care.
-              </p>
-              </div>
-              <DoctorList />
-            
+        </section>
+        <section>
+            <div className='container'>
+                <div className='xl:w-[470px] mx-auto'>
+                    <h2 className='heading text-center'> Our great doctors</h2>
+                    <p className='text_para text-center'>World class care for everyone, our health system offers unmatched,expert health care.</p>
+                </div>
+                <DoctorList />
             </div>
-            </section>
-           {/* ====== our great doctors ========= */}
-           {/* ====== faq section ========= */}
-           <section>
-           <div className='container'>
-            <div className='flex justify-between gap-[50px] lg:gap-0'>
-            <div className='w-1/2 hidden md:block'>
-            <img src={faqImg} alt=''/>
-              </div>
-              <div className='w-full md:w-1/2'>
-                <h2 className='heading'>Most ques asked by our beloved patients</h2>
-                <FaqList />
-              </div>
-              </div>
-            
+        </section>
+        {/* ====== faq section ========= */}
+        <section>
+            <div className='container'>
+                <div className='flex justify-between gap-[50px] lg:gap-0'>
+                    <div className='w-1/2 hidden md:block'><img src={faqImg} alt=''/></div>
+                    <div className='w-full md:w-1/2'><h2 className='heading'>Most ques asked by our beloved patients</h2>
+                    <FaqList />
+                    </div>
+                </div>
             </div>
-            </section>
-
-            {/* ====== faq section end ========= */}
-        
-      </>
-    
+        </section>     
+    </>
   )
 }
-
 export default Home
