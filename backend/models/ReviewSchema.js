@@ -55,6 +55,6 @@ await Doctor.findByIdAndUpdate(doctorId,{
 };
 
 reviewSchema.post('save', function(){
-  this.constructor.calAverageRatings(this.doctor);
+  this.constructor.calcAverageRatings(this.doctor);
 });
 export default mongoose.model("Review", reviewSchema);

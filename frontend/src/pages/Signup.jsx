@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {Link,useNavigate} from 'react-router-dom'; 
 import {BASE_URL} from "../config.js";
-import signupImg from '../assets/images/signup.gif';
 import { authContext } from '../context/AuthContext.jsx';
 import { toast } from 'react-toastify';
 import HashLoader from 'react-spinners/HashLoader.js'
