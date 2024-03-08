@@ -4,23 +4,12 @@ import {NavLink,Link} from 'react-router-dom';
 import { authContext} from '../../context/AuthContext.jsx';
 import {BiMenu} from 'react-icons/bi';
 const navLinks = [
-  {
-    path:"/home",
-    display:'Home'
-  },
-  {
-    path:"/doctors",
-    display:'Find a Doctor'
-  },
-  {
-    path:"/services",
-    display:'Services'
-  },
-  {
-    path:"/contact",
-    display:'Contact'
-  }
-]
+  { path: "/home", display: 'Home' },
+  { path: "/doctors", display: 'Find a Doctor' },
+  { path: "/services", display: 'Services' },
+  { path: "/contact", display: 'Contact' }
+];
+
 const Header = () => {
 
   const headerRef = useRef(null);
@@ -41,22 +30,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll',handleStickyHeader);
   })
 
-  const toggleMenu = () => menuRef.current.classList.toggleMenu('show_menu');
+  const toggleMenu = () => menuRef.current.classList.toggle('show_menu');
   return (
     <header className='header flex items-center' ref={headerRef}>
     <div className='container'>
     <div className='flex items-center justify-between'>
-    {/* =============Logo============ */}
-    <div>
-      <img src={logo} alt=""/>
-    </div>
-
+    <img src={logo} alt=""/>
     {/* =============Menu============ */}
     <div className='navigation' ref={menuRef} >
     <ul className='menu flex items-center gap-[2.7rem]'>
     {
-      navLinks.map((link,index)=>(
-        <li key={index}>
+      navLinks.map((link)=>(
+        <li>
           <NavLink to={link.path}
           className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] font-[600]' : 'text-textColor text-[16px]  font-[500] hover:text-primaryColor'}
           >
@@ -66,17 +51,14 @@ const Header = () => {
       ))
     }
     </ul>
+
     </div>
     {/* =============nav right============ */}
     <div className='flex items-center gap-4'>
     {
       token && user ? 
       (<div>
-      <Link to={`${role==='doctor' ? '/doctors/profile/me':'/users/profile/me'}`}>
-      <figure className='m-[35px] h-[35px] rounded-full'>
-      <img src={user?.photo} className='m-full rounded-full' alt=''/>
-      </figure>
-      </Link>
+      <Link to={`${role==='doctor' ? '/doctors/profile/me':'/users/profile/me'}`}></Link>
       </div>)
       :
       (
