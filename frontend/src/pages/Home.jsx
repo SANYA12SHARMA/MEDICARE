@@ -1,9 +1,8 @@
-import React from 'react'
 import heroImg01 from '../assets/images/hero-img01.png';
 import heroImg02 from '../assets/images/hero-img02.png';
 import heroImg03 from '../assets/images/hero-img03.png';
 import icon01 from '../assets/images/icon01.png';
-import icon03 from '../assets/images/icon03.png';
+import icon02 from '../assets/images/icon02.png';
 import {Link} from 'react-router-dom';
 import {BsArrowRight} from 'react-icons/bs';
 import faqImg from '../assets/images/faq-img.png';
@@ -16,53 +15,33 @@ import FaqList from '../components/Faq/FaqList';
 const Home = () => {
   return (
     <>
-      {/* =======Hero Section======== */}
-    
-        <section className='hero_section pt-[60px] 2xl:h-[800px]'>
-        <div className='container'>
-          <div className='flex flex-col lg:flex-row gap-[90px] items-center justify-between'>
-          {/* =========hero content======= */}
-          <div>
-            <div className='lg:w-[570px]'>
-            <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px]'>
-              We help patients live a healthy , longer life.
-            </h1>
-            <p className='text_para'>
-            Lorem ipsum dolor sit amet consectetur, adipiscing elit.Natus quaerat cumque fugit, persp sed do eiusmod tempor incididex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum?
-            </p>
-            <button className='btn'> Request an Appointment</button>
-            </div>
-
-          </div>
-          {/* =========hero content======= */}
-          <div className='flex gap-[30px] justify-end'>
-          <div>
-            <img className='w-full' src={heroImg01} alt='' />
-          </div>
-          <div className='mt-[30px]'>
-          <img className='w-full mb-[30px]' src={heroImg02} alt='' />
-          <img className='w-full' src={heroImg03} alt='' />
-          </div>
-          </div>
-          </div>
-        </div>
-        </section>
-        {/* =======Hero Section end======== */}
         <section>
-          <div className='container'>
-            <div className='lg:w-[470px] mx-auto'>
-              <h2 className='heading text-center'>
-                Providing the best medical services
-              </h2>
-              <p className='text_para text-center'>
-                World-class care for everyone, our health system offers unmatched expert health care.
-              </p>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap:5 lg:gap-[30px] mt-[30px] lg:mt-[55px]'>
-              <div className='py-[30px] px-5'>
-                <div className='flex items-center justify-center'>
-                <img src={icon01}/>
+            <div className='container'>
+                <div className='flex flex-col lg:flex-row gap-[90px] items-center justify-between'>
+                    <div className='lg:w-[570px]'>
+                        <h1 className='text-[36px] leading-[50px] text-headingColor font-[800] md:text-[60px]'>We help patients live a healthy , longer life.</h1>
+                        <p className='text_para'>Lorem ipsum dolor sit amet consectetur, adipiscing elit.Natus quaerat cumque fugit, persp sed do eiusmod tempor incididex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum?</p>
+                        <button className='btn'> Request an Appointment</button>
+                    </div>
+                    <div className='flex gap-[30px] justify-end'>
+                        <div><img className='w-full' src={heroImg01} alt='' /></div>
+                        <div className='mt-[30px]'>
+                            <img className='w-full mb-[30px]' src={heroImg02} alt='' />
+                            <img className='w-full' src={heroImg03} alt='' />
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+        <section>
+            <div className='container'>
+                <div className='lg:w-[470px] mx-auto'>
+                    <h2 className='heading text-center'>Providing the best medical services</h2>
+                    <p className='text_para text-center'>World-class care for everyone, our health system offers unmatched expert health care.</p>
+                </div>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap:5 lg:gap-[30px] mt-[30px] lg:mt-[55px]'>
+                    <div className='py-[30px] px-5'>
+                        <div className='flex items-center justify-center'><img src={icon01}/></div>
 
                 <div className='mt-[30px]'>
                   <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>Find a Doctor</h2>
@@ -77,7 +56,7 @@ const Home = () => {
 
               <div className='py-[30px] px-5'>
                 <div className='flex items-center justify-center'>
-                <img src={icon03}/>
+                <img src={icon02}/>
                 </div>
 
                 <div className='mt-[30px]'>
