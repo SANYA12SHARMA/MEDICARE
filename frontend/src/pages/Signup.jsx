@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState ,useContext} from 'react';
 import {Link,useNavigate} from 'react-router-dom'; 
 import {BASE_URL} from "../config.js";
-import { authContext } from '../context/AuthContext.jsx';
+import { authContext} from '../context/AuthContext.jsx';
 import { toast } from 'react-toastify';
 import HashLoader from 'react-spinners/HashLoader.js'
 import uploadImageToCloudinary from '../utils/uploadCloudinary.js';
@@ -38,6 +38,7 @@ const Signup = () => {
     setFormData({ ...formData, photo: null });
   }
   };
+  const {dispatch} = useContext(authContext)
 
   const submitHandler = async event => {
     event.preventDefault();
@@ -56,10 +57,9 @@ const Signup = () => {
     if(!res.ok){
         throw new Error(message);
     }
-
+    dispatch({type: 'LOGOUT'});
     setLoading(false);
     toast.success(message);
-    authContext.dispatch({ type: "LOGOUT" });
     navigate('/login');
     }
   catch(err){
