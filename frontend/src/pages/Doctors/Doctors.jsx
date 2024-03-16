@@ -17,7 +17,7 @@ const Doctors = () => {
       setDebounceQuery(query)
     },700)
     return () => clearTimeout(timeout);
-  })
+  },[query])
   const {data:doctors,loading,error} = useFetchData(`${BASE_URL}/doctors?query=${debounceQuery}`)
   return (
     <>
