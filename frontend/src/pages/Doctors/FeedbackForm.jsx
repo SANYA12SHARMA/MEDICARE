@@ -1,11 +1,43 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
+import {useParams} from 'react-router-dom';
+import {BASE_URL} from '../../config';
+import {toast} from 'react-toastify';
+import HashLoader from 'react-spinners/HashLoader';
 const FeedbackForm = () => {
     const [rating,setRating] = useState(0);
     const [hover,setHover] = useState(0);
     const [reviewText,setReviewText] = useState(0);
+    const [loading,setLoading] = useState(false);
+    const {id} = useParams()
     const handleSubmitReview = async e => {
         e.preventDefault();
+        setLoading(true);
+        try{
+            if(!rating || !reviewText){
+                setLoading(false);
+                return toast.error('Rating and Review fields are required');
+                
+            }
+            const res = await fetch(`${BASE_URL}/doctors/${id}/reviews`,{
+                method:'post',
+                headers:{
+                    'Content-Type':'application/json',
+                    Authorization:`Bearer ${token}`
+                },
+                body:JSON.stringify({rating,reviewText})
+            })
+            const result = await res.json();
+            console.log(result);
+            if(!res.ok){
+                throw new Error(result.message);
+            }
+            setLoading(false);
+            toast.success(result.message)
+        }catch(err){
+            setLoading(false);
+            toast.error("You are not authorized to create review.");
+        }
     }
   return(
    <form action=''>
@@ -42,7 +74,7 @@ const FeedbackForm = () => {
 
         </textarea>
         <button type="submit" onClick={handleSubmitReview} className='btn'>
-            Submit Feedback
+            {loading ? <HashLoader size={25}/>:'Submit Feedback'}
         </button>
         </div>
   </form>
