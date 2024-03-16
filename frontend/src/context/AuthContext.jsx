@@ -1,6 +1,4 @@
-//context api is a built-in feature iin react that provides a way to share data (state) across the component tree without having to pass props down
-//through each level of the tree manually. It's a state management tool used for managing global or shared state in your react applications.
-import { useContext, useEffect, useReducer,createContext } from "react";
+import { useEffect, useReducer,createContext } from "react";
 
 const initialState={
     user: localStorage.getItem('user')!==undefined ? JSON.parse(localStorage.getItem('user')):null,
@@ -11,7 +9,6 @@ const initialState={
 export const authContext = createContext(initialState);
 
 const authReducer = (state, action)=>{
-
     switch(action.type){
         case "LOGIN_START":
             return{

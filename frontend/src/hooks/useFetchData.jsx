@@ -17,6 +17,7 @@ const useFetchData = (url) => {
                 throw new Error(result.message);
             }
             setData(result.data);
+
             setLoading(false);
            }
            catch(err){
@@ -27,7 +28,9 @@ const useFetchData = (url) => {
         };
         fetchData();
     },[url])
+    console.log(data);
     return {
+        
         data,loading,error
     }
 }

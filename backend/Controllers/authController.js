@@ -60,6 +60,7 @@ export const register = async(req, res)=>{
         res.status(500).json({success: false, message:"Internal server error, try again"});
     }
 };
+
 export const login = async(req, res)=>{
     const {email} = req.body;
     try{
@@ -91,9 +92,9 @@ export const login = async(req, res)=>{
         //get token
         const token = generateToken(user);
 
-        const {password, role, appointments, ...rest} = user._doc
+        const {password, role, appointments, ...rest} = user._doc;
 
-        res.status(200).json({status: true, message: "Successfully login", token, data: { ...rest }, role, });
+        res.status(200).json({status: true, message: "Successfully login", token, data: { ...rest }, role });
     }catch(err){
         res.status(500).json({status: false, message: "Failed to login"});
     }

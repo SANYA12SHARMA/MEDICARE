@@ -14,7 +14,9 @@ const Profile = ({doctorData}) => {
       specialization:"",
       ticketPrice:0,
       qualifications:[],
-      experiences:[],
+      experiences:[{
+        startingDate:'',endingDate:'',position:'',hospital:''
+      }],
       timeSlots:[],
       about:'',
       photo:null,
@@ -34,7 +36,7 @@ const Profile = ({doctorData}) => {
       about:doctorData?.about,
       photo:doctorData?.photo,
     })
-  })
+  },[])
   const handleInputChange = e =>{
     setFormData({...formData,[e.target.name]:e.target.value});
   };
