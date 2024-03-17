@@ -12,7 +12,6 @@ export const authenticate = async(req, res, next)=>{
     }
 
     try{
-        console.log("not verified");
         const token = authToken.split(" ")[1];
         
         //verify token
