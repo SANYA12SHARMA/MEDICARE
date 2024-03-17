@@ -11,7 +11,7 @@ const Feedback = ({reviews,totalRating}) => {
       <h4 className='text-[20px] leading-[30px] font-bold text-headingColor mb-[30px]'>
         All reviews({totalRating})
       </h4>
-      {reviews?.map((review,index)=>{<div key={index} className='flex justify-between gap-10 mb-[30px]'>
+      {reviews?.map((review,index)=>(<div key={index} className='flex justify-between gap-10 mb-[30px]'>
         <div className='flex gap-3'>
             <figure className='w-10 h-10 rounded-full'>
                 <img className='w-full' src={review?.user?.photo} alt=''/>
@@ -28,7 +28,7 @@ const Feedback = ({reviews,totalRating}) => {
         <div className='flex gap-1'>
             {[...Array(review?.rating).keys()].map((_,index)=><AiFillStar key={index} color='#0067FF'/>)}
         </div>
-      </div>})}
+      </div>))}
       </div>
       {!showFeedbackForm && <div className='text-center'><button className='btn' onClick={() => setshowFeedbackForm(true)}> Give Feedback</button></div>}
       {showFeedbackForm && <FeedbackForm/>}
