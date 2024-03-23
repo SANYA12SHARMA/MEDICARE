@@ -13,15 +13,11 @@ export const authenticate = async(req, res, next)=>{
 
     try{
         const token = authToken.split(" ")[1];
-        
         //verify token
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-        
-
         req.userId=decoded.id ;
         req.role = decoded.role ;
-
-        next();//must be call the next function
+        next(); //must be call the next function
     }
     catch(err){
 

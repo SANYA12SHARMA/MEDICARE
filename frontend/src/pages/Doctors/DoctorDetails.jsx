@@ -12,6 +12,7 @@ import { useParams } from 'react-router-dom';
 const DoctorDetails = () => {
   const [tab,setTab] = useState('about');
   const {id} = useParams();
+
   const {data:doctor,loading,error} = useFetchData(`${BASE_URL}/doctors/${id}`)
 
   const {

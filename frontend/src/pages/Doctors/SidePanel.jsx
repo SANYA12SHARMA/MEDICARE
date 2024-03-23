@@ -1,5 +1,45 @@
-import convertTime from "../../utils/convertTime.js"
+import convertTime from "../../utils/convertTime.js";
+import {BASE_URL,token} from './../../config.js';
+import {toast} from 'react-toastify';
 const SidePanel = ({doctorId,ticketPrice,timeSlots}) => {
+  const bookingHandler = async() => {
+    try{
+      // Retrieve user object from local storage
+      let user;
+      try {
+        const userString = localStorage.getItem('user');
+        if (!userString) {
+          throw new Error('User data not found in local storage');
+        }
+        user = JSON.parse(userString);
+        if (!user || !user._id) {
+          throw new Error('User ID not found in user data');
+        }
+      } catch (error) {
+        console.error('Error retrieving or parsing user data:', error);
+        // Handle the error appropriately, such as showing a message to the user
+        // or redirecting them to a login page if necessary
+        toast.error('User ID not found. Please log in.');
+        // Redirect to login page or handle as needed
+        return;
+      }
+      const res = await fetch(`${BASE_URL}/bookings/checkout-session/${doctorId}/${user._id}`,{
+        method:'post',
+        headers:{
+          Authorization:`Bearer ${token}`
+        }
+      })
+      const data = await res.json();
+      if(!res.ok){
+        throw new Error(data.message + 'Please try again');
+      }
+      if(data.session && data.session.url){
+        window.location.href = data.session.url;
+      }
+    }catch(err){
+      toast.error(err.message);
+    }
+  }
   return (
     <div className='shadow-panelShadow p-3 lg:p-5 rounded-md'>
       <div className='flex items-center justify-between'>
@@ -22,9 +62,9 @@ const SidePanel = ({doctorId,ticketPrice,timeSlots}) => {
             </li>))}
         </ul>
       </div>
-      <button className='btn px-2 w-full rounded-md'>Book an Appointment</button>
+      <button onClick={bookingHandler} className='btn px-2 w-full rounded-md'>Book an Appointment</button>
     </div>
   )
 }
 
-export default SidePanel
+export default SidePanel;

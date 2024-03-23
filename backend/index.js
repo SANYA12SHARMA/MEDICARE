@@ -14,7 +14,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-    origin: true
+    origin: 'http://127.0.0.1:5173'
 };
 
 app.get('/',(req, res)=>{
