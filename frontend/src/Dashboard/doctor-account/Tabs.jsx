@@ -8,7 +8,6 @@ const Tabs = ({ tab, setTab }) => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        console.log('btn');
         dispatch({ type: "LOGOUT" });
         navigate("/login"); // Corrected this line
     };
