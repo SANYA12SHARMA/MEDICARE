@@ -3,7 +3,6 @@ import {AiOutlineDelete} from 'react-icons/ai';
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import {BASE_URL, token} from './../../config';
 import {toast} from 'react-toastify';
-import { set } from "mongoose";
 const Profile = ({doctorData}) => {
   const [formData, setFormData] = useState({
       name:"",

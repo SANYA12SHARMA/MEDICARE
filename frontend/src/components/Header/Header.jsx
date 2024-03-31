@@ -9,7 +9,8 @@ const navLinks = [
   { path: "/home", display: 'Home' },
   { path: "/doctors", display: 'Find a Doctor' },
   { path: "/services", display: 'Services' },
-  { path: "/contact", display: 'Contact' }
+  { path: "/contact", display: 'Contact' },
+  { path: localStorage.getItem('role') === 'doctor' ? "/doctors/profile/me" : "/users/profile/me", display: 'Profile' }
 ];
 
 const Header = () => {
@@ -18,7 +19,7 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
-    navigate("/home");
+    navigate("/home"); // Corrected this line
   };
 
   const headerRef = useRef(null);
@@ -71,14 +72,12 @@ const Header = () => {
             </span>
             {token && user ? (
               <div>
-                <Link to={`${role === 'doctor' ? '/doctors/profile/me' : '/users/profile/me'}`}>
                   <button
                     onClick={handleLogout}
                     className="bg-primaryColor px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]"
                   >
                     Logout
                   </button>
-                </Link>
               </div>
             ) : (
               <Link to='/login'>

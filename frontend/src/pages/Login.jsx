@@ -46,7 +46,11 @@ const Login = () => {
 
     setLoading(false)
     toast.success(result.message)
-    navigate('/home');
+    if(localStorage.getItem('role')==='doctor') {
+      navigate('/doctors/profile/me');
+    } else {
+      navigate('/users/profile/me');
+    }
     }
   catch(err){
     toast.error(err.message);
