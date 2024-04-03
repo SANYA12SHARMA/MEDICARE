@@ -5,13 +5,6 @@ import { authContext} from '../../context/AuthContext.jsx';
 import {BiMenu} from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 
-const navLinks = [
-  { path: "/home", display: 'Home' },
-  { path: "/doctors", display: 'Find a Doctor' },
-  { path: "/services", display: 'Services' },
-  { path: "/contact", display: 'Contact' },
-  { path: localStorage.getItem('role') === 'doctor' ? "/doctors/profile/me" : "/users/profile/me", display: 'Profile' }
-];
 
 const Header = () => {
   const { dispatch } = useContext(authContext);
@@ -25,7 +18,13 @@ const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const { user, role, token } = useContext(authContext);
-
+  const navLinks = [
+    { path: "/home", display: 'Home' },
+    { path: "/doctors", display: 'Find a Doctor' },
+    { path: "/services", display: 'Services' },
+    { path: "/contact", display: 'Contact' },
+    { path: token && user ? (role === 'doctor' ? "/doctors/profile/me" : "/users/profile/me") : "/login", display: 'Profile' }
+  ];
   const handleStickyHeader = () => {
     window.addEventListener('scroll', () => {
       if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
