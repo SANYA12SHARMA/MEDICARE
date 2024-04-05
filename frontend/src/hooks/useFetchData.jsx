@@ -21,14 +21,12 @@ const useFetchData = (url) => {
             setLoading(false);
            }
            catch(err){
-            console.error('Fetch Error:', err); // Log the error for debugging
             setLoading(false);
             setError(err.message);
            }
         };
         fetchData();
     },[url])
-    console.log(data);
     return {
         
         data,loading,error

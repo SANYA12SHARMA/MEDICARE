@@ -12,10 +12,11 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const {dispatch} = useContext(authContext)
+  const {dispatch,role} = useContext(authContext)
   const handleInputChange = e => {
     setFormData({...formData,[e.target.name]:e.target.value});
   };
+  console.log(role);
   
 
   const submitHandler = async event => {
@@ -46,11 +47,7 @@ const Login = () => {
 
     setLoading(false)
     toast.success(result.message)
-    if(localStorage.getItem('role')==='doctor') {
-      navigate('/doctors/profile/me');
-    } else {
-      navigate('/users/profile/me');
-    }
+    navigate('/home');
     }
   catch(err){
     toast.error(err.message);

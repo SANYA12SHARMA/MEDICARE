@@ -64,21 +64,19 @@ export const getUserProfile = async(req, res)=>{
     }
 };
 
-export const getMyAppointments = async(req, res)=>{
+export const getMyAppointments = async (req, res) => {
     try {
-        //step 1: retrieve appointments from booking
-        const bookings = await Booking.find({user: req.userId})
-        console.log("bookings",bookings);
+        // Step 1: Retrieve appointments from bookings
+        const bookings = await Booking.find({ user: req.userId });
 
-        //setp 2: extract doctor ids from appointment bookings
-        const doctorIds = bookings.map(el=>el.doctor.id)
+        // Step 2: Extract doctor ids from appointment bookings
+        const doctorIds = bookings.map(el => el.doctor);
 
-        //setp-3 : retrieve doctors using doctor ids
+        // Step 3: Retrieve doctors using doctor ids
+        const doctors = await Doctor.find({ _id: { $in: doctorIds } }).select('-password');
 
-        const doctors = await Doctor.find({_id: {$in: doctorIds}}).select('-password')
-
-        res.status(200).json({success: true, message:'Appointments are getting', data: doctors})
+        res.status(200).json({ success: true, message: 'Appointments are getting', data: doctors });
     } catch (error) {
-        res.status(500).json({success: false, message: "Something went wrong, cannot get"});
+        res.status(500).json({ success: false, message: "Something went wrong, cannot get" });
     }
 };
