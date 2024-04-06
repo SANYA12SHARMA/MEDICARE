@@ -4,21 +4,21 @@ MediCare is a MERN (MongoDB, Express.js, React, Node.js) project that facilitate
 
 ##  Features
 1.User Authentication:
--Secure user authentication system for patient and doctors.
+- Secure user authentication system for patient and doctors.
 
 2.Appointment Booking:
--Patients can search for doctors, view their availability, and book appointments.
--Ability to book appointments with registered doctors on the platform.
+- Patients can search for doctors, view their availability, and book appointments.
+- Ability to book appointments with registered doctors on the platform.
 
 3.Medical Services:
--Patients can browse services, check availability, and book appointments accordingly.
+- Patients can browse services, check availability, and book appointments accordingly.
 
 4.Profile Management:
--Users can manage their profiles, update personal information, and view appointment history.
--Doctors providers can manage their profiles and update their schedules.
+- Users can manage their profiles, update personal information, and view appointment history.
+- Doctors providers can manage their profiles and update their schedules.
 
 5.Dashboard for Healthcare Providers:
--Dedicated dashboard for doctors to view patient details.
+- Dedicated dashboard for doctors to view patient details.
 
 6.Review Feature:
 - Provide an option for patients to leave feedback along with their ratings.
