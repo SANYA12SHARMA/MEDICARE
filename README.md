@@ -1,10 +1,8 @@
 # MediCare
-
 MediCare is a MERN (MongoDB, Express.js, React, Node.js) project that facilitates the interaction between patients and doctors for appointment booking and management.
 
 
 ##  Features
-
 1.User Authentication:
 -Secure user authentication system for patient and doctors.
 
@@ -27,6 +25,22 @@ MediCare is a MERN (MongoDB, Express.js, React, Node.js) project that facilitate
 - Doctors can view the reviews and ratings left by patients on their profiles.
 - Aggregate and display average ratings and reviews for each doctor to help patients make informed decisions.
 
+## Usage: 
+- Open the application in your web browser.
+- Sign up or log in as a patient or doctor.
+- Patients can book, view, and delete appointments. Doctors can manage appointments by accepting or rejecting them.
+- Explore the application's features, including appointment booking, management, and reviews.
+
+## Technologies Used
+### Frontend:
+- HTML, CSS, JavaScript
+- React.js for dynamic user interface
+### Backend:
+- Node.js with Express.js framework
+- MongoDB for database management
+### Authentication:
+- JWT(Json Web Token)
+  
 ## Getting Started:
 1.Clone the repository:
 ```terminal
@@ -51,27 +65,12 @@ $ npm run start-dev
 ```
 
 5.Set up environment variables:
-~Create a .env file in the root directory.
-~Define the following variables:
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+- Create a .env file in the root directory.
+- Define the following variables:
+   PORT=5000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
 
 6.Access the application:
 Open your web browser and navigate to https://medicarefrontend.onrender.com/home
 
-## Usage: 
-- Open the application in your web browser.
-- Sign up or log in as a patient or doctor.
-- Patients can book, view, and delete appointments. Doctors can manage appointments by accepting or rejecting them.
-- Explore the application's features, including appointment booking, management, and reviews.
-
-## Technologies Used
-### Frontend:
-- HTML, CSS, JavaScript
-- React.js for dynamic user interface
-### Backend:
-- Node.js with Express.js framework
-- MongoDB for database management
-### Authentication:
-- JWT(Json Web Token)
