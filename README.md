@@ -1,8 +1,10 @@
-MediCare
+# MediCare
+
 MediCare is a MERN (MongoDB, Express.js, React, Node.js) project that facilitates the interaction between patients and doctors for appointment booking and management.
 
 
-Features:
+##  Features
+
 1.User Authentication:
 -Secure user authentication system for patient and doctors.
 
@@ -25,21 +27,28 @@ Features:
 - Doctors can view the reviews and ratings left by patients on their profiles.
 - Aggregate and display average ratings and reviews for each doctor to help patients make informed decisions.
 
-Getting Started:
-
+## Getting Started:
 1.Clone the repository:
-~git clone https://github.com/SANYA12SHARMA/MEDICARE
+```terminal
+$ git clone https://github.com/SANYA12SHARMA/MEDICARE.git
+```
 
 2.Install dependencies:
-npm install
+```terminal
+$ npm install
+```
 
 3.Navigate to frontend:
-cd frontend
-npm run start
+```terminal
+$ cd frontend
+$ npm run start
+```
 
 4.Navigate to backend:
-cd backend
-npm run start-dev
+```terminal
+$ cd backend
+$ npm run start-dev
+```
 
 5.Set up environment variables:
 ~Create a .env file in the root directory.
@@ -51,12 +60,18 @@ JWT_SECRET=your_jwt_secret
 6.Access the application:
 Open your web browser and navigate to https://medicarefrontend.onrender.com/home
 
-Usage: 
+## Usage: 
+- Open the application in your web browser.
+- Sign up or log in as a patient or doctor.
+- Patients can book, view, and delete appointments. Doctors can manage appointments by accepting or rejecting them.
+- Explore the application's features, including appointment booking, management, and reviews.
 
-1.Open the application in your web browser.
-
-2.Sign up or log in as a patient or doctor.
-
-3.Patients can book, view, and delete appointments. Doctors can manage appointments by accepting or rejecting them.
-
-4.Explore the application's features, including appointment booking, management, and reviews.
+## Technologies Used
+### Frontend:
+- HTML, CSS, JavaScript
+- React.js for dynamic user interface
+### Backend:
+- Node.js with Express.js framework
+- MongoDB for database management
+### Authentication:
+- JWT(Json Web Token)
