@@ -1,5 +1,4 @@
 import express from "express"
-import cookieParser from "cookie-parser"
 import cors from 'cors';
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
@@ -34,7 +33,6 @@ const connectDB = async()=>{
 
 //middleware
 app.use(express.json());
-app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);

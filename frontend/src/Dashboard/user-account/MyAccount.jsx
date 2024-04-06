@@ -44,7 +44,7 @@ const MyAccount = () => {
                     </div>
                     <div className="mt-[50px] md:mt-[100px]">
                         <button onClick={handleLogout} className="w-full bg-[#181A1E] p-3 text-[16px] leading-7 rounded-md text-white">Logout</button>
-                        <button className="w-full bg-red-600 p-3 text-[16px] leading-7 rounded-md text-white">Delete account</button>
+                        
 
                     </div>
                 </div>

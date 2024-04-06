@@ -33,7 +33,6 @@ const DoctorSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  appointments: [{ type: mongoose.Types.ObjectId, ref: "Appointment" }],
 });
 
 export default mongoose.model("Doctor", DoctorSchema);

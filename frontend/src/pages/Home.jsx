@@ -19,8 +19,8 @@ const Home = () => {
                 <div className='flex flex-col lg:flex-row gap-[90px] items-center justify-between'>
                     <div className='lg:w-[570px]'>
                         <h1 className='text-[36px] leading-[50px] text-headingColor font-[800] md:text-[60px]'>We help patients live a healthy , longer life.</h1>
-                        <p className='text_para'>Lorem ipsum dolor sit amet consectetur, adipiscing elit.Natus quaerat cumque fugit, persp sed do eiusmod tempor incididex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum?</p>
-                        <button className='btn'> Request an Appointment</button>
+                        <p className='text_para'>Our team of dedicated professionals works tirelessly to provide personalized care and support, fostering a community where everyone can thrive and enjoy a healthier, happier life.</p>
+                        <Link to='/doctors'><button className='btn'> Request an Appointment</button></Link>
                     </div>
                     <div className='flex gap-[30px] justify-end'>
                         <div><img className='w-full' src={heroImg01} alt='' /></div>
@@ -43,7 +43,7 @@ const Home = () => {
                         <div className='flex items-center justify-center'><img src={icon01}/></div>
                         <div className='mt-[30px]'>
                             <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>Find a Doctor</h2>
-                            <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>World-class care for everyone. Our health system offers unmatched expert health care.From the lab to the clinic.</p>
+                        
                             <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor'>
                                 <BsArrowRight className='group-hover:text-white w-6 h-5' />
                             </Link>
@@ -53,7 +53,7 @@ const Home = () => {
                         <div className='flex items-center justify-center'><img src={icon02}/></div>
                         <div className='mt-[30px]'>
                             <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>Book an Appointment</h2>
-                            <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>World-class care for everyone. Our health system offers unmatched expert health care.From the lab to the clinic.</p>
+                   
                             <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor'>
                                 <BsArrowRight className='group-hover:text-white w-6 h-5' />
                             </Link>
@@ -67,7 +67,7 @@ const Home = () => {
             <div className='container'>
                 <div className='xl:w-[470px] mx-auto'>
                     <h2 className='heading text-center'> Our medical services</h2>
-                    <p className='text_para text-center'>World class care for everyone, our health system offers unmatched,expert health care.</p>
+                
                 </div>
                 <ServiceList />
             </div>

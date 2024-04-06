@@ -393,37 +393,3 @@ return (
 };
 
 export default Profile
-
-{/* <div className="mb-5">
-
-
-  
-
-  </select>
-</div>
-
-<div>
-  <p className="form_label">Specialization*</p>
-  <select name="specialization" value={formData.specialization}
-  onChange={handleInputChange}
-  className="form_input py-3.5"
-  >
-  <option value="">Select</option>
-  
-
-  </select>
-</div>
-
-
-</div>
-
-<div className="mb-5">
-  <
-
-  
-</div>
-
-
-
-
-</div> */}
