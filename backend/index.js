@@ -12,10 +12,6 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
-const corsOptions = {
-    origin: 'https://medicarefront-end.onrender.com/'
-};
-
 app.get('/',(req, res)=>{
     res.send('Api is working');
 });
@@ -33,7 +29,9 @@ const connectDB = async()=>{
 
 //middleware
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://medicarefront-end.onrender.com',
+  }));
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/doctors', doctorRoute);
